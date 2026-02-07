@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, CheckCircle } from 'lucide-react';
+import { ArrowRight, Star, ShieldCheck, UserCheck, Clock } from 'lucide-react';
 import { servicesData, reviewsData } from '../data';
 
 const Home: React.FC = () => {
@@ -41,64 +41,30 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Welcome / Philosophy Section (Redesigned) */}
-      <section className="py-20 bg-white">
+      {/* Features / Philosophy Short */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            
-            {/* Left Column: Image */}
-            <div className="w-full lg:w-1/2 relative">
-              <div className="relative rounded-lg overflow-hidden shadow-xl aspect-[4/5] max-h-[600px]">
-                 <img 
-                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Ηλίας Αποστολάκης" 
-                  className="w-full h-full object-cover"
-                />
-                {/* Decorative border */}
-                <div className="absolute inset-0 border-2 border-gold-500/20 m-4 rounded pointer-events-none"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="p-6 rounded-lg bg-gray-50 border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-navy-100 text-navy-900 mb-4">
+                <ShieldCheck size={32} />
               </div>
+              <h3 className="text-xl font-bold mb-2 font-serif">Ακεραιότητα</h3>
+              <p className="text-gray-600">Ηθική προσέγγιση σε κάθε υπόθεση με απόλυτη διαφάνεια προς τον εντολέα.</p>
             </div>
-
-            {/* Right Column: Content */}
-            <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-6 leading-tight">
-                Καλωσορίσατε στο Δικηγορικό Γραφείο <span className="text-gold-600">Ηλία Αποστολάκη</span>
-              </h2>
-              
-              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                Στο Δικηγορικό Γραφείο του Ηλία Αποστολάκη στο Χαλάνδρι, δημιουργούμε ένα υποστηρικτικό περιβάλλον για κάθε εντολέα. 
-                Κατανοούμε ότι τα νομικά ζητήματα προκαλούν άγχος, γι' αυτό στόχος μας είναι να σας απαλλάξουμε από το βάρος της διαδικασίας, 
-                παρέχοντας λύσεις με κατανόηση, εχεμύθεια και απόλυτο επαγγελματισμό.
-              </p>
-
-              <div className="bg-gray-50 p-8 rounded-lg border-l-4 border-gold-500 shadow-sm">
-                <h3 className="text-xl font-bold text-navy-900 mb-6 uppercase tracking-wider border-b border-gray-200 pb-2">
-                  Φιλοσοφια & Αξιες
-                </h3>
-                <ul className="space-y-5">
-                  <li className="flex items-start">
-                    <CheckCircle className="text-gold-500 mr-4 flex-shrink-0 mt-1" size={24} />
-                    <div>
-                      <span className="font-bold text-navy-900 block text-lg mb-1">Εμπειρία & Γνώση</span>
-                      <span className="text-gray-600 leading-snug">Βαθιά γνώση της νομολογίας και πολυετής εμπειρία στο αντικείμενο για τη βέλτιστη νομική θωράκιση.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-gold-500 mr-4 flex-shrink-0 mt-1" size={24} />
-                    <div>
-                      <span className="font-bold text-navy-900 block text-lg mb-1">Προσωπική Επαφή</span>
-                      <span className="text-gray-600 leading-snug">Άμεση επικοινωνία με τον δικηγόρο, χτίζοντας σχέσεις εμπιστοσύνης και διαφάνειας.</span>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="text-gold-500 mr-4 flex-shrink-0 mt-1" size={24} />
-                    <div>
-                      <span className="font-bold text-navy-900 block text-lg mb-1">Αποτελεσματικότητα</span>
-                      <span className="text-gray-600 leading-snug">Προσηλωμένοι στην επίτευξη του καλύτερου δυνατού αποτελέσματος με ταχύτητα και συνέπεια.</span>
-                    </div>
-                  </li>
-                </ul>
+            <div className="p-6 rounded-lg bg-gray-50 border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-navy-100 text-navy-900 mb-4">
+                <UserCheck size={32} />
               </div>
+              <h3 className="text-xl font-bold mb-2 font-serif">Εξειδίκευση</h3>
+              <p className="text-gray-600">Βαθιά γνώση του αντικειμένου, ειδικά σε θέματα συντάξεων και ακινήτων.</p>
+            </div>
+            <div className="p-6 rounded-lg bg-gray-50 border border-gray-100 hover:shadow-lg transition-shadow">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-navy-100 text-navy-900 mb-4">
+                <Clock size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-2 font-serif">Συνέπεια</h3>
+              <p className="text-gray-600">Άμεση ανταπόκριση και τήρηση των χρονοδιαγραμμάτων.</p>
             </div>
           </div>
         </div>

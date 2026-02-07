@@ -78,6 +78,8 @@ export const contactInfo = {
   address: "Αγ. Γεωργίου 27 & Αριστείδου, Χαλάνδρι 152 34",
   phone: "699 469 8894",
   phoneLink: "tel:6994698894",
+  landline: "210 683 3273",
+  landlineLink: "tel:2106833273",
   hours: "Δευτέρα - Παρασκευή: 09:00 - 17:00",
   mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.123456789!2d23.79!3d38.02!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDAxJzEyLjAiTiAyM8KwNDcnMjQuMCJF!5e0!3m2!1sel!2sgr!4v1600000000000!5m2!1sel!2sgr" // Placeholder approximation logic for embed
 };

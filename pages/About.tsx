@@ -11,17 +11,24 @@ const About: React.FC = () => {
           <div className="w-24 h-1 bg-gold-500 mx-auto rounded"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Image */}
-          <div className="relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Images Column */}
+          <div className="flex flex-col gap-6 relative">
             <img 
               src="https://images.unsplash.com/photo-1593115057322-e94b77572f20?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
               alt="Law Office Interior" 
-              className="rounded-lg shadow-xl w-full h-auto object-cover"
+              className="rounded-lg shadow-xl w-full h-64 object-cover"
             />
-            <div className="absolute -bottom-6 -right-6 bg-gold-500 text-white p-8 rounded hidden md:block">
-              <span className="block text-4xl font-bold font-serif mb-1">9+</span>
-              <span className="text-sm uppercase tracking-wider">Άριστες<br/>Κριτικές</span>
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                alt="Law books and gavel" 
+                className="rounded-lg shadow-xl w-full h-64 object-cover"
+              />
+              <div className="absolute -bottom-5 -right-5 bg-gold-500 text-white p-6 rounded shadow-lg hidden md:block border-4 border-white">
+                <span className="block text-3xl font-bold font-serif mb-1">9+</span>
+                <span className="text-xs uppercase tracking-wider">Άριστες<br/>Κριτικές</span>
+              </div>
             </div>
           </div>
 

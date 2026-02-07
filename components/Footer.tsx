@@ -36,9 +36,12 @@ const Footer: React.FC = () => {
                 <MapPin className="text-gold-500 mr-2 flex-shrink-0 mt-1" size={18} />
                 <span className="text-gray-300">{contactInfo.address}</span>
               </li>
-              <li className="flex items-center">
-                <Phone className="text-gold-500 mr-2 flex-shrink-0" size={18} />
-                <a href={contactInfo.phoneLink} className="text-gray-300 hover:text-white transition-colors">{contactInfo.phone}</a>
+              <li className="flex items-start">
+                <Phone className="text-gold-500 mr-2 flex-shrink-0 mt-1" size={18} />
+                <div className="flex flex-col">
+                  <a href={contactInfo.landlineLink} className="text-gray-300 hover:text-white transition-colors mb-1">{contactInfo.landline}</a>
+                  <a href={contactInfo.phoneLink} className="text-gray-300 hover:text-white transition-colors">{contactInfo.phone}</a>
+                </div>
               </li>
               <li className="flex items-center">
                 <Clock className="text-gold-500 mr-2 flex-shrink-0" size={18} />

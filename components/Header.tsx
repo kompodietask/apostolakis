@@ -17,10 +17,16 @@ const Header: React.FC = () => {
         {/* Top Bar - Contact Info */}
         <div className="hidden md:flex justify-end items-center py-2 border-b border-navy-800 text-sm text-gray-300">
           <span className="mr-4">Αγ. Γεωργίου 27, Χαλάνδρι</span>
-          <a href={contactInfo.phoneLink} className="flex items-center hover:text-gold-500 transition-colors">
-            <Phone size={14} className="mr-1" />
-            {contactInfo.phone}
-          </a>
+          <div className="flex items-center space-x-4">
+            <a href={contactInfo.landlineLink} className="flex items-center hover:text-gold-500 transition-colors">
+              <Phone size={14} className="mr-1" />
+              {contactInfo.landline}
+            </a>
+            <a href={contactInfo.phoneLink} className="flex items-center hover:text-gold-500 transition-colors">
+              <Phone size={14} className="mr-1" />
+              {contactInfo.phone}
+            </a>
+          </div>
         </div>
 
         {/* Main Navbar */}

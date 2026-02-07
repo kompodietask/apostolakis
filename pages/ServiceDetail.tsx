@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
-import { servicesData } from '../data';
+import { servicesData, contactInfo } from '../data';
 
 const ServiceDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -75,35 +75,36 @@ const ServiceDetail: React.FC = () => {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24">
-              <div className="bg-navy-900 text-white p-8 rounded-lg shadow-lg">
-                <h3 className="text-xl font-bold mb-4 font-serif">Χρειάζεστε Νομική Συμβουλή;</h3>
-                <p className="text-gray-300 mb-6">
-                  Επικοινωνήστε μαζί μας σήμερα για να συζητήσουμε την υπόθεσή σας.
-                </p>
-                <div className="space-y-4">
-                  <a href="tel:6994698894" className="block w-full text-center bg-gold-600 hover:bg-gold-500 text-white font-bold py-3 rounded transition-colors">
-                    Καλέστε: 699 469 8894
-                  </a>
-                  <Link to="/contact" className="block w-full text-center border border-white hover:bg-white hover:text-navy-900 text-white font-bold py-3 rounded transition-colors">
-                    Φόρμα Επικοινωνίας
-                  </Link>
-                </div>
+            <div className="bg-navy-900 text-white p-8 rounded-lg shadow-lg sticky top-24">
+              <h3 className="text-xl font-bold mb-4 font-serif">Χρειάζεστε Νομική Συμβουλή;</h3>
+              <p className="text-gray-300 mb-6">
+                Επικοινωνήστε μαζί μας σήμερα για να συζητήσουμε την υπόθεσή σας.
+              </p>
+              <div className="space-y-3">
+                <a href={contactInfo.landlineLink} className="block w-full text-center bg-gold-600 hover:bg-gold-500 text-white font-bold py-3 rounded transition-colors">
+                  Καλέστε: {contactInfo.landline}
+                </a>
+                <a href={contactInfo.phoneLink} className="block w-full text-center bg-navy-800 hover:bg-navy-700 border border-navy-700 text-white font-bold py-3 rounded transition-colors">
+                   Κινητό: {contactInfo.phone}
+                </a>
+                <Link to="/contact" className="block w-full text-center border border-white hover:bg-white hover:text-navy-900 text-white font-bold py-3 rounded transition-colors mt-4">
+                  Φόρμα Επικοινωνίας
+                </Link>
               </div>
+            </div>
 
-              <div className="mt-8">
-                <h4 className="font-bold text-navy-900 mb-4 uppercase text-sm tracking-wider">Αλλες Υπηρεσιες</h4>
-                <div className="space-y-2">
-                  {servicesData.filter(s => s.id !== service.id).map(s => (
-                    <Link 
-                      key={s.id} 
-                      to={`/services/${s.id}`}
-                      className="block p-3 bg-white border border-gray-200 rounded hover:border-gold-500 hover:shadow-md transition-all text-gray-700"
-                    >
-                      {s.title}
-                    </Link>
-                  ))}
-                </div>
+            <div className="mt-8">
+              <h4 className="font-bold text-navy-900 mb-4 uppercase text-sm tracking-wider">Αλλες Υπηρεσιες</h4>
+              <div className="space-y-2">
+                {servicesData.filter(s => s.id !== service.id).map(s => (
+                  <Link 
+                    key={s.id} 
+                    to={`/services/${s.id}`}
+                    className="block p-3 bg-white border border-gray-200 rounded hover:border-gold-500 hover:shadow-md transition-all text-gray-700"
+                  >
+                    {s.title}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
