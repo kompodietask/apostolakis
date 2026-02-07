@@ -35,7 +35,7 @@ const ServiceDetail: React.FC = () => {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative">
           {/* Main Content */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100">
@@ -75,36 +75,39 @@ const ServiceDetail: React.FC = () => {
 
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-navy-900 text-white p-8 rounded-lg shadow-lg sticky top-24">
-              <h3 className="text-xl font-bold mb-4 font-serif">Χρειάζεστε Νομική Συμβουλή;</h3>
-              <p className="text-gray-300 mb-6">
-                Επικοινωνήστε μαζί μας σήμερα για να συζητήσουμε την υπόθεσή σας.
-              </p>
-              <div className="space-y-3">
-                <a href={contactInfo.landlineLink} className="block w-full text-center bg-gold-600 hover:bg-gold-500 text-white font-bold py-3 rounded transition-colors">
-                  Καλέστε: {contactInfo.landline}
-                </a>
-                <a href={contactInfo.phoneLink} className="block w-full text-center bg-navy-800 hover:bg-navy-700 border border-navy-700 text-white font-bold py-3 rounded transition-colors">
-                   Κινητό: {contactInfo.phone}
-                </a>
-                <Link to="/contact" className="block w-full text-center border border-white hover:bg-white hover:text-navy-900 text-white font-bold py-3 rounded transition-colors mt-4">
-                  Φόρμα Επικοινωνίας
-                </Link>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <h4 className="font-bold text-navy-900 mb-4 uppercase text-sm tracking-wider">Αλλες Υπηρεσιες</h4>
-              <div className="space-y-2">
-                {servicesData.filter(s => s.id !== service.id).map(s => (
-                  <Link 
-                    key={s.id} 
-                    to={`/services/${s.id}`}
-                    className="block p-3 bg-white border border-gray-200 rounded hover:border-gold-500 hover:shadow-md transition-all text-gray-700"
-                  >
-                    {s.title}
+            <div className="sticky top-32 space-y-8">
+              <div className="bg-navy-900 text-white p-8 rounded-lg shadow-lg">
+                <h3 className="text-xl font-bold mb-4 font-serif">Χρειάζεστε Νομική Συμβουλή;</h3>
+                <p className="text-gray-300 mb-6">
+                  Επικοινωνήστε μαζί μας σήμερα για να συζητήσουμε την υπόθεσή σας.
+                </p>
+                <div className="space-y-3">
+                  <a href={contactInfo.landlineLink} className="block w-full text-center bg-gold-600 hover:bg-gold-500 text-white font-bold py-3 rounded transition-colors">
+                    Καλέστε: {contactInfo.landline}
+                  </a>
+                  <a href={contactInfo.phoneLink} className="block w-full text-center bg-navy-800 hover:bg-navy-700 border border-navy-700 text-white font-bold py-3 rounded transition-colors">
+                     Κινητό: {contactInfo.phone}
+                  </a>
+                  <Link to="/contact" className="block w-full text-center border border-white hover:bg-white hover:text-navy-900 text-white font-bold py-3 rounded transition-colors mt-4">
+                    Φόρμα Επικοινωνίας
                   </Link>
-                ))}
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                <h4 className="font-bold text-navy-900 mb-4 uppercase text-sm tracking-wider border-b border-gray-100 pb-2">Αλλες Υπηρεσιες</h4>
+                <div className="space-y-2">
+                  {servicesData.filter(s => s.id !== service.id).map(s => (
+                    <Link 
+                      key={s.id} 
+                      to={`/services/${s.id}`}
+                      className="block p-3 rounded hover:bg-gray-50 hover:text-gold-600 transition-colors text-gray-700 text-sm font-medium flex items-center"
+                    >
+                      <span className="w-1.5 h-1.5 bg-gold-500 rounded-full mr-2"></span>
+                      {s.title}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
